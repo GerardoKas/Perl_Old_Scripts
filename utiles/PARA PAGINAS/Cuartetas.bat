@@ -1,0 +1,1 @@
+@perl "C:\Perl\utiles\PARA PAGINAS\Cuartetas.pl" %*

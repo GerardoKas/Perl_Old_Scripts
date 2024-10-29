@@ -1,0 +1,19 @@
+____________________________________
+MINIATURIZADOR
+____________________________________
+LISTA EN JAVASCRIPT de IMAGENES?
+LISTA EN XML de IMAGENES?
+LISTA EN HTML de IMAS
+____________________________________
+AÑADIR TEXTO
+AÑADIR LOGO
+____________________________________
+CREAR ANIMACION DESDE IMAGENES
+MODIFICAR LOOP O DELAy DE ANIMACION
+____________________________________
+RETOCAR FOTOS (SHARPEN CONTRAST EQUALIZE NORMALIZE GAMMA)
+____________________________________
+
+
+---------------------------------------------------------------------
+LA MAYORIA BUSCAN <TODOS LOS ARCHIVOS DE IMAGENES> en un mismo <DIRECTORIO BASE>. Algunos son <RELATIVOS> al directorio base. 

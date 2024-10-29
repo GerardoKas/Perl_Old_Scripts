@@ -1,0 +1,23 @@
+Re: Can we Access MDB database file in PERL ,Any Modules On that??
+
+
+To: Veeraraju_Mareddi <rajuveera@satyam.com>
+Subject: Re: Can we Access MDB database file in PERL ,Any Modules On that??
+From: Simon Oliver <simon.oliver@umist.ac.uk>
+Date: Mon, 29 Oct 2001 12:16:31 +0000
+CC: "'beginners@perl.org'" <beginners@perl.org>, "'perl-win32-admin@listserv.ActiveState.com'" <perl-win32-admin@listserv.ActiveState.com>
+Delivered-To: mailing list beginners@perl.org
+Delivered-To: moderator for beginners@perl.org
+Mailing-List: contact beginners-help@perl.org; run by ezmlm
+Organization: UMIST
+References: <27B993528DFED411956700B0D0AA8C95110447@hot.satyam.com>
+
+
+Yes - take a look at:
+
+DBI + DBD::ODBC or DBD::ADO
+Win32::OLE + ADO or DAO
+Win32::ODBC
+
+--
+  Simon Oliver
