@@ -1,0 +1,132 @@
+<style> 
+pre {font-family:arial}
+div {border:6 outset;padding:8;width:95%;}
+b {color:ffaa00}
+i{color:aaff00;font-family:book antiqua;font-size:larger}
+#fondo{background-color:220000;color:yellow}
+.IMP{background-color:000044;color:yellow}
+.MASIMP{background-color:222200;color:yellow}
+.POCO{background-color:004400;color:green}
+.BIG {background-color:black;color:yellow;font-size:15pt;padding-top:25;bottom}
+.BIGGER {border-top:30 groove;border-left:20;background-color:RED;color:GREEN;font-size:17pt;font-weight:bold}
+.SMALL{background-color:black;color:yellow;font-size:9pt}
+.NORM{background-color:black;border-left:14;color:white;font-size:13;width:90%}
+#CV{background-color:blue;color:yellow;font-weight:800;line-height:2}
+
+</style>
+<basefont size=4 face=arial>
+
+<div id=CV>
+1.- ERS
+2.- ANALISIS
+   2.1.- DFD
+   2.2.- E-R ó MER
+3.- DISEÑO
+   3.1 DIAGRAMA DE ESTRUCTURAS
+4.- CODIFICACION Y PRUEBAS
+5.- MANTENIMIENTO
+</div>
+<DIV CLASS=BIGGER>
+1.- ERS (Especificacion de Requisitos del Software)
+</DIV>
+<div id=fondo>
+   <b>Utilidad del producto para el usuario  </b>
+         -para qué lo necesita
+         -qué trabajo le va a cambiar
+         -cuanto estaria dispuesto a esperar-pagar
+
+   <b>Vision del producto en el ambito</b>
+         -existen otros productos anteriores que hagan algo parecido?
+         -servirá el nuestro como competidor de otros?
+         -suple una necesidad importante? o una menor?
+
+   <b>Sentido del producto</b>
+         -Si vale la pena realizarlo (teniendo en cuenta el tiempo y el esfuerzo-complejidad y el dinero y las posibilidades de tener éxito)
+</div>
+<div id=fondo>
+   <div class=IMP>
+  <i>Qué queremos que haga nuestro programa?</i>
+   <b>Requisitos Funcionales (1 .. N)</b>
+      para cada requisito hacer:
+                  -Descripcion (que va a hacer esta pieza)
+                  -Entradas (los datos que le llegaran a lafuncion)
+                  -Proceso (lo que se le va a hacer a los datos)
+                  -Salida (Lo que se devuelve al usuario, se guarda en un archivo, o se manda a otro proceso
+   </div>
+   <div class=IMP>
+   <i>Qué necesitamos de antemano para realizar el proyecto?</i>
+   <i>y Qué necesitará el programa para ser usado?</i>
+   <b>Requisitos Fisicos</b>
+              -de interface (cómo se comunicará el usuario con el programa(teclado,raton...)
+              -de Hardware (Maquinas que seran usadas por el proyecto)
+              -de Software (Programas que ayudaran en el proyecto o son necesarios para que el programa funcione)
+              -de Redes *(si se usa)
+   </div>
+   <div class=POCO>
+   <font size=+3>(</font>
+<b>Limitaciones </b>(reparables o irreparables)
+   <b>Calidad</b> necesaria
+<font size=+3>)</font>
+   </div>
+</div>
+<div class=BIG>
+Se definira "coloquialmente" pero concisamente (sin pasarse y sin dejar cosas sin explicar) lo que se desea que haga el programa.
+Cuanto mas y mejor esté descrito mas facil serán los procesos posteriores, porque habrá mas informacion en la que basarse.
+</div>
+<div class=NORM>
+Este proceso se suele realizar por entrevistas con los usuarios del futuro sistema.
+Para encontrar los requisitos funcionales se suelen emplear los USE-CASES o Casos de Uso, disintos caminos por los que se puede usar el sistema en una sesion. En estos pasos se encuentran los <i>elementos del proyecto</i>, <b>objetos</b> que se van a usar, los <b>datos</b> que se van a necesitar, y los <b>procesos</b> que actuarán.
+
+</div>
+<div class=NORM style='background-color:550000'>
+Hay distintos formas de pensar y modelar el sistema segun se haga mas incapie en unos u otros factores:
+   -Orientado a los <b>procesos</b> que va a realizar
+   -Orientado segun los <b>datos e informacion</b> que sera manejada
+   -Guiado por el analisis del <b>sistema en el tiempo</b>
+</div>
+<div class=BIGGER>
+2.- ANALISIS
+</div>
+<div class=NORM style="width:300">
+A partir de ahora se entra en la descomposicion del problema en sus partes y so organizacion lógica (no fisica) que puede descubrirse como jerárquica, secuencial, etc.
+Se descompondrán para hallar su esencia, su significado, y su necesidad, los dos aspectos mas importantes del software, e.d. los PROCESOS y los DATOS.
+Los datos se modelan en el E-R (Entidad-Relacion) pero este modelado solo es estrictamente necesario para usar una base de datos. Aunque tambien es muy util si se va a trabajar con objetos. El E-R define las relaciones entre los datos, las jerarquias, las categorias, etc.
+Los procesos se modelan en el DFD (Diagrama de Flujo de Datos), donde se descomponen las acciones principales del programa en otras menores, lo que nos permitira en principio ver un diseño de como será el programa (no funcionando sino en su forma abstracta o logica) y que nos dara pistas de si vamos bien, o si ya hay errores.
+
+
+</div>
+<div class=BIGGER>
+   2.1.- DFD (Diagrama de Flujo de Datos o DataFlow Diagram)
+</div>
+<div class=NORM>
+El DFD hace incapié en los procesos-funciones, mientras que el E-R lo hace sobre los Datos.
+En esta parte se divide y estructura por primera vez el proyecto, nombrando las funciones del sistema, y su interconexion, es decir, los datos que se pasan de unas funciones a otras.
+Lo que da su estructura al diagrama son los flujos de datos (son los que conectan las funciones).
+Los procesos son las cajas negras que transforman las 'entradas' y las convierten en 'salidas'.
+Proceso es la funcion que opera con los datos de entrada, los transforma por medio de una <b>fórmula</b>, y los devuelve a la salida. Esta fórmula es el proceso en sí. 
+Cada proceso se representa por un circulo o burbuja. El nombre del proceso va dentro del curculo y debe ser simple; debería bastar con un <b>VERBO</b> mas un <b>SUSTANTIVO</b> (o en su defecto un sintagma nominal). 
+Por ejemplo:
+   Proceso 1. <b>Guardar Ficha</b>
+o bien
+   Proceso 1. <b>Guardar Ficha Corregida</b>
+o bien
+   Proceso 1. <b>Guardar Ficha de Autores</b>
+El primer caso puede ser ambiguo, dependiendo del contexto. Los otros dos casos especifican mejor que es lo que contiene el dato, quitando posibilidades de equivocacion.
+
+Veamos ahora un ejemplo de un proceso incorrecto:
+   Proceso 2. <b>Comprobar y Guardar Ficha</b>
+El error es unir dos procesos en uno; se sabe que son dos procesos porque se ha necesitado dos verbos, e.d. dos acciones distintas. Esto se debe solucionar diviendo el proceso en dos distintos, donde probablemente la salida del primero sea la entrada del segundo.
+   Proceso 2.1 <b>Comprobar Ficha</b>
+   Proceso 2.2 <b>Guardar Ficha</b>
+
+</div>
+
+<div class=BIGGER>
+   2.2.- E-R ó MER
+</div>
+
+
+
+<div id=BIBLIO>
+Yourdon,Edward <u>Analisis Estructurado MOderno</u>
+

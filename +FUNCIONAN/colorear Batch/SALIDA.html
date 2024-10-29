@@ -1,0 +1,91 @@
+<font color=blue>ECHO</font> <font color=gray><font color=blue>off</font></font><br>
+<font color=green>REM Un debuger a la GerardoCastro</font><br>
+<font color=green>REM para ejecutar sin problemas un script perl</font><br>
+<font color=green>REM [No hay entrada de parametros (a&uacute;n) ]</font><br>
+<br>
+<br>
+<font color=green>REM cambiar el titulo (solo NT)</font><br>
+<font color=blue>TITLE</font> <font color=orange>%1</font><br>
+<br>
+<font color=red>:INICIO</font><br>
+<br>
+<font color=blue>cls</font><br>
+<br>
+<font color=blue>ECHO</font> <font color=gray>===<font color=orange>%1</font>====</font><br>
+<font color=blue>ECHO</font> <font color=gray>1  NORMAL (EN PANTALLA)</font><br>
+<font color=blue>ECHO</font> <font color=gray>2. VERBOSE (EN PANTALLA)</font><br>
+<font color=blue>ECHO</font> <font color=gray>3. CHECKEAR SINTAXIS (OK)</font><br>
+<font color=blue>ECHO</font> <font color=gray>4. SALIDA TEXTO </font><br>
+<font color=blue>ECHO</font> <font color=gray>5. SALIDA HTML</font><br>
+<font color=blue>ECHO</font> <font color=gray>6. -DEBUG</font><br>
+<font color=blue>ECHO</font> <font color=gray>7. MSDOS</font><br>
+<font color=blue>ECHO</font> <font color=gray>8. SALIR   </font><br>
+<font color=blue>ECHO</font> <font color=gray>9. SACaR POD-HELP</font><br>
+<font color=blue>ECHO</font> <font color=gray>============</font><br>
+choice.com /C:123456789 /S ELIGE OPCION<br>
+<br>
+<font color=blue>if</font> <font color=blue>errorlevel</font> 9 <font color=blue>GOTO</font> <font color=red>POD</font><br>
+<font color=blue>if</font> <font color=blue>errorlevel</font> 8 <font color=blue>GOTO</font> <font color=red>END</font><br>
+<font color=blue>if</font> <font color=blue>errorlevel</font> 7 <font color=blue>GOTO</font> <font color=red>MDOS</font><br>
+<font color=blue>IF</font> <font color=blue>ERRORLEVEL</font> 6 <font color=blue>GOTO</font> <font color=red>DEB</font><br>
+<font color=blue>if</font> <font color=blue>errorlevel</font> 5 <font color=blue>GOTO</font> <font color=red>EXP</font><br>
+<font color=blue>if</font> <font color=blue>errorlevel</font> 4 <font color=blue>GOTO</font> <font color=red>NOTE</font><br>
+<font color=blue>if</font> <font color=blue>ERRORLEVEL</font> 3 <font color=blue>GOTO</font> <font color=red>CHECK</font><br>
+<font color=blue>IF</font> <font color=blue>ERRORLEVEL</font> 2 <font color=blue>GOTO</font> <font color=red>VERBO</font><br>
+<font color=blue>IF</font> <font color=blue>ERRORLEVEL</font> 1 <font color=blue>GOTO</font> <font color=red>NORMAL</font><br>
+<br>
+<font color=blue>pause</font><br>
+<font color=green>REM si no es ninguna de esas opciones</font><br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:NORMAL</font><br>
+<font color=green>REM Sin switches</font><br>
+<font color=maroon>perl.exe</font> <font color=orange>%1</font><br>
+<font color=blue>pause</font><br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:CHECK</font><br>
+<font color=green>REM Switch para comprobar sintaxis</font><br>
+<font color=maroon>perl.exe</font> -c <font color=orange>%1</font><br>
+<font color=blue>pause</font> <br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:NOTE</font><br>
+<font color=green>REM Guardar salida y abrir con notepad</font><br>
+<font color=blue>SET</font> <font color=orange>ET</font>=Perl_Out.txt<br>
+<font color=maroon>perl.exe</font> <font color=orange>%1</font> ><font color=orange>%ET%</font><br>
+<font color=blue>start</font> NOTEPAD.EXE <font color=orange>%ET%</font><br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:EXP</font><br>
+<font color=green>REM Guardar salida con extension html y abrir con el navegador por defecto</font><br>
+<font color=blue>SET</font> <font color=orange>ET</font>=Perl_Out.html<br>
+<font color=maroon>perl.exe</font> <font color=orange>%1</font>><font color=orange>%ET%</font><br>
+<font color=blue>start</font> <font color=orange>%ET%</font><br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:DEB</font><br>
+<font color=green>REM Switch para entrar en el depurador (complejo) de Perl</font><br>
+<font color=maroon>perl.exe</font> -d <font color=orange>%1</font><br>
+<font color=blue>pause</font><br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:MDOS</font><br>
+<font color=green>REM Entrar en msdos por si hace falta</font><br>
+command.com<br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:VERBO</font><br>
+<font color=green>REM modo verbose o con warnings (lo primero para corregir un programa)</font><br>
+<font color=blue>cls</font><br>
+<font color=maroon>perl.exe</font> -w <font color=orange>%1</font><br>
+<font color=blue>pause</font><br>
+<font color=blue>GOTO</font> <font color=red>INICIO</font><br>
+<br>
+<font color=red>:POD</font><br>
+<font color=green>REM sacar la ayuda del modulo</font><br>
+pod2html <font color=orange>%1</font> --outfile=<font color=orange>%1</font>.htm<br>
+<br>
+<font color=red>:END</font><br>
+<font color=blue>ECHO</font> <font color=gray>Adios</font><br>
+<font color=blue>exit</font><br>

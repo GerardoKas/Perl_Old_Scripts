@@ -1,0 +1,5 @@
+<h1>SINONIMOS Y DEFINICIONES</h1>
+<pre>
+Proceso=Funcion=Subrutina=Burbuja de un DFD=Caja negra=Actividad mas simple de un programa
+Sistema=Aplicacion=Software=Conjunto de Programas unidos para una labor
+</pre>

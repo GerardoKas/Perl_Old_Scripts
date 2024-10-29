@@ -1,0 +1,28 @@
+<PRE style="font-size:10pt;color:#333366;"><span style="color:#008800;">$dir</span><span style="color:#000000;">=</span><span style="color:#770000;">shift</span> <span style="color:#ff7700;">@ARGV</span><span style="color:#000000;">;</span>
+<span style="color:#770000;">print</span> <span style="color:#0000aa;">"</span><span style="color:#0000aa;">Listado de <span style="color:#880000;">\"</span><span style="color:#008800;">$dir</span><span style="color:#880000;">\"</span></span><span style="color:#0000aa;">"</span><span style="color:#000000;">;</span>
+<span style="color:#000011;">opendir</span><span style="color:#000000;">(</span><span style="color:#33AA33;">DR</span><span style="color:#000000;">,</span><span style="color:#008800;">$dir</span><span style="color:#000000;">)</span> <span style="color:#000000;">or</span> <span style="color:#770000;">die</span> <span style="color:#0000aa;">"</span><span style="color:#0000aa;">NO EXISTE <span style="color:#008800;">$dir</span></span><span style="color:#0000aa;">"</span><span style="color:#000000;">;</span>
+<span style="color:#ff7700;">@fs</span><span style="color:#000000;">=</span><span style="color:#000011;">readdir</span><span style="color:#000000;">(</span><span style="color:#33AA33;">DR</span><span style="color:#000000;">)</span><span style="color:#000000;">;</span>
+<span style="color:#770000;">closedir</span> <span style="color:#33AA33;">DR</span><span style="color:#000000;">;</span>
+
+<span style="color:#ff7700;">@fs</span><span style="color:#000000;">=</span><span style="color:#770000;">grep</span> <span style="color:#000000;">{</span><span style="color:#000000;">!</span><span style="color:#0000aa;">/</span><span style="color:#0000aa;">^<span style="color:#880000;">\.</span></span><span style="color:#0000aa;">/</span><span style="color:#000000;">}</span> <span style="color:#ff7700;">@fs</span><span style="color:#000000;">;</span>
+
+<span style="color:#000011;">print</span> <span style="color:#000000;">(</span><span style="color:#008800;">$#fs</span><span style="color:#000000;">+</span><span style="color:#ff00ff;">1</span><span style="color:#000000;">)</span><span style="color:#000000;">.</span><span style="color:#0000aa;">"</span><span style="color:#0000aa;"> Archivos</span><span style="color:#0000aa;">"</span><span style="color:#000000;">;</span>
+
+<span style="color:#ff7700;">@fs</span><span style="color:#000000;">=</span><span style="color:#770000;">map</span><span style="color:#000000;">{</span><span style="color:#008800;">$_</span><span style="color:#000000;">=</span><span style="color:#0000aa;">"</span><span style="color:#0000aa;"><span style="color:#880000;">\"</span><span style="color:#008800;">$_</span><span style="color:#880000;">\"</span></span><span style="color:#0000aa;">"</span><span style="color:#000000;">}</span> <span style="color:#ff7700;">@fs</span><span style="color:#000000;">;</span>
+
+<span style="color:#008800;">$lista</span><span style="color:#000000;">=</span><span style="color:#000011;">join</span><span style="color:#000000;">(</span><span style="color:#0000aa;">"</span><span style="color:#0000aa;">, </span><span style="color:#0000aa;">"</span><span style="color:#000000;">,</span><span style="color:#ff7700;">@fs</span><span style="color:#000000;">)</span><span style="color:#000000;">;</span>
+
+<span style="color:#000011;">open</span><span style="color:#000000;">(</span><span style="color:#33AA33;">FL</span><span style="color:#000000;">,</span><span style="color:#0000aa;">"</span><span style="color:#0000aa;">&gt;listado.txt</span><span style="color:#0000aa;">"</span><span style="color:#000000;">)</span> <span style="color:#000000;">or</span> <span style="color:#770000;">die</span> <span style="color:#0000aa;">"</span><span style="color:#0000aa;">ERROR EsCRITURA</span><span style="color:#0000aa;">"</span><span style="color:#000000;">;</span>
+<span style="color:#770000;">print</span> <span style="color:#33AA33;">FL</span> <span style="color:#008800;">$lista</span><span style="color:#000000;">;</span>
+<span style="color:#770000;">close</span> <span style="color:#33AA33;">FL</span><span style="color:#000000;">;</span>
+
+<span style="color:#770000;">print</span> <span style="color:#0000aa;">"</span><span style="color:#0000aa;">HECHO<span style="color:#880000;">\n</span></span><span style="color:#0000aa;">"</span><span style="color:#000000;">;</span>
+<span style="color:#770000;">system</span> <span style="color:#0000aa;">"</span><span style="color:#0000aa;">pause</span><span style="color:#0000aa;">"</span><span style="color:#000000;">;</span>
+
+
+
+
+
+
+
+__END__</PRE>

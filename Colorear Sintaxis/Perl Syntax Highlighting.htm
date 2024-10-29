@@ -1,0 +1,194 @@
+<!-- MHonArc v2.5.14 -->
+<!--X-Subject: [Nano&#45;devel] Perl Syntax Highlighting -->
+<!--X-From-R13: Dvpuneq Ezvgu <evpuneqNfdhner8.pbz> -->
+<!--X-Date: Fri, 28 Feb 2003 18:23:10 &#45;0500 -->
+<!--X-Message-Id: 8FC9D3C4&#45;4B73&#45;11D7&#45;8E00&#45;000393750ED4@square8.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!doctype html public "-//W3C//DTD HTML//EN">
+<html>
+<head>
+<title>[Nano-devel] Perl Syntax Highlighting</title>
+</head>
+<body>
+<center>
+<table border=0 cellspacing=2 cellpadding=0 bgcolor="#000000">
+<tr><td><table border=0 bgcolor="#FFFFCC">
+<tr><td><big><b>nano-devel</b></big></td></tr></table></tr></table>
+<small><nobr>[<a href="../"
+>Top</a>][<a href="/archive/html">All Lists</a>]</small></nobr>
+<form method="get" action="/archive/cgi-bin/namazu.cgi">
+<input type="text" name="query" size="30">
+<input type="submit" name="submit" value="Search">
+<input type="hidden" name="idxname" value="nano-devel">
+<a href="/archive/cgi-bin/namazu.cgi?idxname=nano-devel">Advanced</a>
+</form>
+
+</center>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00115.html">Date Prev</a>][<a href="msg00117.html">Date Next</a>][<a href="msg00115.html">Thread Prev</a>][<a href="msg00117.html">Thread Next</a>][<a
+href="index.html#00116">Date Index</a>][<a
+href="threads.html#00116">Thread Index</a>]
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h2>[Nano-devel] Perl Syntax Highlighting</h2>
+<hr>
+<table border=0>
+<tbody>
+<tr>
+<td align="right" valign="top">
+<b>From</b>: </td>
+<td align="left">
+Richard Smith</td>
+</tr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+
+<tr>
+<td align="right" valign="top">
+<b>Subject</b>: </td>
+<td align="left">
+[Nano-devel] Perl Syntax Highlighting</td>
+</tr>
+
+<tr>
+<td align="right" valign="top">
+<b>Date</b>: </td>
+<td align="left">
+Fri, 28 Feb 2003 23:22:53 +0000</td>
+</tr>
+
+</tbody>
+</table>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+Here's a rough Perl syntax highlighting block for the .nanorc. It's not 
+perfect because a lot of perl's built-in functions have such small 
+names, but it works well with my coding style and the 4000 line bit of 
+code I've been testing it on. The magenta line is there for 
+completeness sake, it looks better without it. Hopefully this will act 
+as a starter for somebody willing to clean it up.<br>
+<br>
+<br>
+syntax &quot;perl&quot; &quot;.*\.pl$&quot; &quot;.*\.pm$&quot;<br>
+color red &quot; accept&quot; &quot; alarm&quot; &quot; atan2&quot; &quot; bind&quot; &quot; binmode&quot; &quot; caller&quot; &quot; 
+chdir&quot; &quot; chmod&quot; &quot; chop&quot; &quot; chown&quot; &quot; chroot&quot; &quot; close&quot; &quot; closedir&quot; &quot; 
+connect&quot; &quot; cos&quot; &quot; crypt&quot; &quot; dbmclose&quot; &quot; dbmopen&quot; &quot; defined&quot;<br>
+color red &quot; delete&quot; &quot; die&quot; &quot; do&quot; &quot; dump&quot; &quot; \&lt;each\&gt;&quot; &quot; eof&quot; &quot; eval&quot; &quot; 
+exec&quot; &quot; exists&quot; &quot; exit&quot; &quot; exp&quot; &quot; fcntl&quot; &quot; fileno&quot; &quot; flock&quot; &quot; fork&quot; &quot; 
+getc&quot; &quot; getlogin&quot; &quot; getpeername&quot; &quot; getpgrp&quot; &quot; getppid&quot;<br>
+color red &quot; getpriority&quot; &quot; getpwnam&quot; &quot; gethostbyname&quot; &quot; getnetbyname&quot; &quot; 
+getprotobyname&quot; &quot; getpwuid&quot; &quot; getgrgid&quot; &quot; getservbyname&quot; &quot; 
+gethostbyaddr&quot; &quot; getnetbyaddr&quot; &quot; getprotobynumber&quot;<br>
+color red &quot; getservbyport&quot; &quot; getpwent&quot; &quot; getgrent&quot; &quot; gethostent&quot; &quot; 
+getnetent&quot; &quot; getprotoent&quot; &quot; getservent&quot; &quot; setpwent&quot; &quot; setgrent&quot; &quot; 
+sethostent&quot; &quot; setnetent&quot; &quot; setprotoent&quot; &quot; setservent&quot;<br>
+color red &quot; endpwent&quot; &quot; endgrent&quot; &quot; endhostent&quot; &quot; endnetent&quot; &quot; 
+endprotoent&quot; &quot; endservent&quot; &quot; getsockname&quot; &quot; getsockopt&quot; &quot; gmtime&quot; &quot; 
+goto&quot; &quot; grep&quot; &quot; hex&quot; &quot; index&quot; &quot; int&quot; &quot; ioctl&quot; &quot; join&quot; &quot; keys&quot;<br>
+color red &quot; kill&quot; &quot; last&quot; &quot; length&quot; &quot; link&quot; &quot; listen&quot; &quot; local&quot; &quot; 
+localtime&quot; &quot; log&quot; &quot; lstat&quot; &quot; m&quot; &quot; mkdir&quot; &quot; msgctl&quot; &quot; msgget&quot; &quot; msgsnd&quot; 
+&quot; msgrcv&quot; &quot; next&quot; &quot; oct&quot; &quot; open&quot; &quot; opendir&quot; &quot; ord&quot; &quot; pack&quot;<br>
+color red &quot; pipe&quot; &quot; pop&quot; &quot; print&quot; &quot; printf&quot; &quot; push&quot; &quot; q&quot; &quot; qq&quot; &quot; qx&quot; &quot; 
+rand&quot; &quot; read&quot; &quot; readdir&quot; &quot; readlink&quot; &quot; recv&quot; &quot; redo&quot; &quot; rename&quot; &quot; 
+require&quot; &quot; reset&quot; &quot; return&quot; &quot; reverse&quot; &quot; rewinddir&quot; &quot; rindex&quot;<br>
+color red &quot; rmdir&quot; &quot; \&lt;s\&gt;&quot; &quot; scalar&quot; &quot; seek&quot; &quot; seekdir&quot; &quot; select&quot; &quot; 
+semctl&quot; &quot; semget&quot; &quot; semop&quot; &quot; send&quot; &quot; setpgrp&quot; &quot; setpriority&quot; &quot; 
+setsockopt&quot; &quot; shift&quot; &quot; shmctl&quot; &quot; shmget&quot; &quot; shmread&quot; &quot; shmwrite&quot;<br>
+color red &quot; shutdown&quot; &quot; sin&quot; &quot; sleep&quot; &quot; socket&quot; &quot; socketpair&quot; &quot; sort&quot; &quot; 
+splice&quot; &quot; split&quot; &quot; sprintf&quot; &quot; sqrt&quot; &quot; srand&quot; &quot; stat&quot; &quot; study&quot; &quot; substr&quot; 
+&quot; symlink&quot; &quot; syscall&quot; &quot; sysread&quot; &quot; system&quot;<br>
+color red &quot; syswrite&quot; &quot; tell&quot; &quot; telldir&quot; &quot; time&quot; &quot; tr&quot; &quot; y&quot; &quot; truncate&quot; 
+&quot; umask&quot; &quot; undef&quot; &quot; unlink&quot; &quot; unpack&quot; &quot; unshift&quot; &quot; utime&quot; &quot; values&quot; &quot; 
+vec&quot; &quot; wait&quot; &quot; waitpid&quot; &quot; wantarray&quot; &quot; warn&quot; &quot; write&quot;<br>
+color magenta &quot; continue&quot; &quot; else&quot; &quot; elsif&quot; &quot; do&quot; &quot; \&lt;for\&gt;&quot; &quot; 
+\&lt;foreach\&gt;&quot; &quot; if&quot; &quot; unless&quot; &quot; until&quot; &quot; while&quot; &quot; eq&quot; &quot; ne&quot; &quot; lt&quot; &quot; gt&quot; 
+&quot; le&quot; &quot; ge&quot; &quot; cmp&quot; &quot; x&quot; &quot; my&quot; &quot; sub&quot; &quot; use&quot; &quot; package&quot; &quot; can&quot; &quot; isa&quot;<br>
+color cyan start=&quot;(\$|@|%)&quot; end=&quot;( |\W|-)&quot;<br>
+color yellow &quot;&quot;.*&quot;&quot;<br>
+color yellow &quot;qq\|.*\|&quot;<br>
+color white &quot;s\/.*\/&quot;<br>
+color white &quot;m\/.*\/&quot;<br>
+color white start=&quot;^use&quot; end=&quot;;&quot;<br>
+color white start=&quot; = new&quot; end=&quot;;&quot;<br>
+color green &quot;\#.*&quot;<br>
+color yellow start=&quot;&lt;&lt; 'STOP'&quot; end=&quot;STOP&quot;<br>
+<br>
+<br>
+<br>
+Richard Smith<br>
+<a href="/spam.html">richard@bogus.example.com</a><br>
+<br>
+- Chatbear - free messageboards, amazing customisation.<br>
+- <a  href="http://www.chatbear.com/">http://www.chatbear.com/</a><br>
+<br>
+<br>
+<br>
+<br>
+
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<form method="post" action="/mp/yyz.py" enctype="multipart/form-data">
+<input type="hidden" name="a" value="richard">
+<input type="hidden" name="b" value="[Nano-devel] Perl Syntax Highlighting">
+<input type="hidden" name="d" value="8FC9D3C4-4B73-11D7-8E00-000393750ED4@square8.com">
+<input type="hidden" name="c" value="square8.com">
+<center>reply via email to<br><input type="submit" value=" Richard Smith "></center>
+</form>
+<hr>
+<table width="100%">
+<tr><td align="left">[Prev in Thread]</td>
+<td align="center"><b>Current Thread</b></td>
+<td align="right">[<a href="msg00117.html">Next in Thread</a>]</td></tr></table>
+<ul>
+<li><font color="#666666"><strong>[Nano-devel] Perl Syntax Highlighting</strong>,
+<em>Richard Smith</em></font>&nbsp;<b>&lt;=</b>
+<ul>
+<li><b><a name="00117" href="msg00117.html">Re: [Nano-devel] Perl Syntax Highlighting</a></b>, <i>David Benbennick</i>, <tt>2003/02/28</tt>
+</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00115.html">[Nano-devel] Nano Installer for Win 32</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00117.html">Re: [Nano-devel] Perl Syntax Highlighting</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00115.html">[Nano-devel] Nano Installer for Win 32</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00117.html">Re: [Nano-devel] Perl Syntax Highlighting</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="index.html#00116"><strong>Date</strong></a></li>
+<li><a href="threads.html#00116"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

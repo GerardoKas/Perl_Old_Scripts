@@ -1,0 +1,10 @@
+use Time::Local;
+$f="e.txt";
+$now=time;
+$now-=6000;
+#$now=100330000;
+$now=timelocal(0,0,0,1,1,2001);
+$now=timelocal(27,4,20,26,8,2002);
+print "$now\n";
+$k=utime($now,$now,$f);
+print "$k\n";

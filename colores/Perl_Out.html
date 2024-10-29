@@ -1,0 +1,1309 @@
+Sun Sep 15 12:45:52 2002<br>
+<script>
+function OP(){
+    var p=document.all.p
+    if (p.tag=="oculto"){
+    for (i in document){p.innerHTML+=i+"=<b>"+document[i]+"</b><br>";}
+    p.tag="mostrado";
+    }else{
+    p.tag="oculto"
+    p.innerHTML="DOCUMENT<br>"
+    }
+}
+function mos(item){
+//AL OVER
+var color=item.style.backgroundColor
+document.all.dix.value=color
+}
+function BG(item){
+//AL CLICK
+var color=item.style.backgroundColor
+if (!TipoPoner){
+    window.status="Pulsa un boton para elegir el color de ese elemento ... "+color
+    return;
+}
+//document.bgColor=color
+window.status="EL COLOR PARA "+TipoPoner+" = "+color
+
+escribir(TipoPoner,color);
+
+}
+var TipoPoner
+function poner(tipo){
+TipoPoner=tipo//para cuando se clickee el color
+}
+//////////////////
+var CAMPOS=new Array();//sera TEXT=ff00ff....
+function escribir(tipo,color){
+found=0
+for (i in CAMPOS){
+    if(CAMPOS[i].match(tipo)){
+        CAMPOS[i]=tipo+"=#"+color
+        found=1;
+        break;
+    }
+}
+if (!found){
+    CAMPOS.push(tipo+"=#"+color)
+}
+var tbody
+t="<BODY "
+for (i in CAMPOS){
+    t+=" "+CAMPOS[i]+" "
+}
+t+=">"
+document.M.TTT.value=t
+}
+///////////////
+function mostrarejemplo(){
+var obj=document.all.EJ.style;
+var TTV=document.M.TTT.value
+TTV+="TEXTO NORMAL<br><a href='nowhere'>LINK</a><br></BODY>"
+var ventana=window.open("V","","width=300,height=200");
+ventana.document.write(TTV)
+}
+</script>
+<div id=EJ style="position:absolute;top:0;left:400">
+</div>
+<div id=p style="background-color:black;color:white" tag=oculto onclick=OP()>DOCUMENT<br></div>
+<input type=textbox id=dix style="font-size:20" value="ELIGE COLOR">&nbsp;
+<form name=M>
+<input type=text name=TTT size=100 value="&lt;BODY&gt;"><br>
+<input type=button value="BGCOLOR" onclick=poner(this.value)>
+<input type=button value="TEXT" onclick=poner(this.value)>
+<input type=button value="LINK" onclick=poner(this.value)>
+<input type=button value="VLINK" onclick=poner(this.value)>
+<input type=button value="ALINK" onclick=poner(this.value)>
+<input typE=button value=MoStRaR onclick=mostrarejemplo()>
+</form>
+
+<table border=1 width=100%><td>
+
+<table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:000000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:007800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:009600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e0000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e1e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e3c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e5a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e7800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e9600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1eb400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ed200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ef000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c0000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c1e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c3c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c5a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c7800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c9600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cb400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cd200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cf000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a0000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a1e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a3c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a5a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a7800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a9600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ab400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ad200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5af000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:780000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:781e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:783c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:785a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:787800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:789600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:960000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:961e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:963c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:965a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:967800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:969600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b40000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b41e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b43c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b45a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b47800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b49600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d20000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d21e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d23c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d25a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d27800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d29600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f00000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f01e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f03c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f05a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f07800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f09600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:000040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:007840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:009640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e0040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e1e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e3c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e5a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e7840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e9640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1eb440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ed240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ef040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c0040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c1e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c3c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c5a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c7840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c9640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cb440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cd240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cf040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a0040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a1e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a3c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a5a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a7840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a9640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ab440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ad240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5af040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:780040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:781e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:783c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:785a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:787840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:789640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78b440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78d240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78f040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:960040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:961e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:963c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:965a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:967840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:969640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96b440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96d240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96f040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b40040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b41e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b43c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b45a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b47840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b49640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4b440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4d240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4f040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d20040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d21e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d23c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d25a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d27840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d29640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2b440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2d240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2f040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f00040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f01e40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f03c40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f05a40;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f07840;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f09640;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0b440;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0d240;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0f040;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:000080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:007880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:009680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e0080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e1e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e3c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e5a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e7880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e9680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1eb480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ed280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ef080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c0080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c1e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c3c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c5a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c7880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c9680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cb480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cd280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cf080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a0080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a1e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a3c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a5a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a7880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a9680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ab480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ad280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5af080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:780080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:781e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:783c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:785a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:787880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:789680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78b480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78d280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78f080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:960080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:961e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:963c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:965a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:967880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:969680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96b480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96d280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96f080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b40080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b41e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b43c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b45a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b47880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b49680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4b480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4d280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4f080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d20080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d21e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d23c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d25a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d27880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d29680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2b480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2d280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2f080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f00080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f01e80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f03c80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f05a80;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f07880;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f09680;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0b480;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0d280;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0f080;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:0000c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0078c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0096c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e00c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e1ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e3cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e5ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e78c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e96c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1eb4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ed2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ef0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c00c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c1ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c3cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c5ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c78c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c96c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cb4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cd2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cf0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a00c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a1ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a3cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a5ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a78c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a96c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ab4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ad2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5af0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:7800c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:781ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:783cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:785ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7878c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7896c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78b4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78d2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78f0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:9600c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:961ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:963cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:965ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9678c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9696c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96b4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96d2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96f0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b400c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b41ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b43cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b45ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b478c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b496c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4b4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4d2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4f0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d200c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d21ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d23cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d25ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d278c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d296c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2b4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2d2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2f0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f000c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f01ec0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f03cc0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f05ac0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f078c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f096c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0b4c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0d2c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0f0c0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table>
+
+</table>
+
+
+
+<br>
+
+<table border=1 width=100%><td>
+
+<table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:000000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:000078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:000096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0000b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0000d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0000f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e0000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e0078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e0096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e00b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e00d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e00f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c0000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c0078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c0096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c00b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c00d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c00f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a0000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a0078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a0096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a00b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a00d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a00f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:780000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:780078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:780096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7800b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7800d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7800f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:960000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:960078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:960096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9600b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9600d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9600f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b40000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b40078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b40096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b400b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b400d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b400f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d20000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d20078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d20096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d200b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d200d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d200f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f00000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f00078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f00096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f000b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f000d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f000f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:004000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:004078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:004096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0040b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0040d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0040f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e4000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e4078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e4096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e40b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e40d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e40f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c4000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c4078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c4096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c40b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c40d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c40f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a4000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a4078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a4096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a40b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a40d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a40f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:784000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:784078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:784096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7840b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7840d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7840f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:964000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:964078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:964096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9640b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9640d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9640f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b44000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b44078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b44096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b440b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b440d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b440f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d24000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d24078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d24096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d240b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d240d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d240f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f04000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0401e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0403c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0405a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f04078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f04096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f040b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f040d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f040f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:008000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:008078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:008096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0080b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0080d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0080f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1e8000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e8078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e8096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e80b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e80d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1e80f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3c8000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c8078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c8096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c80b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c80d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3c80f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5a8000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a8078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a8096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a80b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a80d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5a80f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:788000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:788078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:788096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7880b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7880d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:7880f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:968000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:968078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:968096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9680b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9680d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:9680f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b48000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b48078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b48096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b480b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b480d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b480f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d28000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d28078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d28096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d280b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d280d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d280f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f08000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0801e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0803c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0805a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f08078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f08096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f080b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f080d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f080f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:00c000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00c0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:1ec000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:1ec0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:3cc000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:3cc0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:5ac000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:5ac0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:78c000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:78c0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:96c000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:96c0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:b4c000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:b4c0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:d2c000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:d2c0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:f0c000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:f0c0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table>
+
+</table>
+
+
+
+<br>
+
+<table border=1 width=100%><td>
+
+<table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:000000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:000078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:000096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0000b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0000d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0000f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:001e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001e96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001eb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001ed2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:001ef0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:003c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003c96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003cb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003cd2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:003cf0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:005a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005a96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005ab4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005ad2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:005af0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:007800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00781e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00783c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00785a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:007878;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:007896;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0078b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0078d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0078f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:009600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00961e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00963c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00965a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:009678;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:009696;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0096b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0096d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:0096f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:00b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b41e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b43c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b45a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b478;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b496;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b4b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b4d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00b4f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:00d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d21e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d23c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d25a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d278;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d296;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d2b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d2d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00d2f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:00f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:00f0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:400000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:400078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:400096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4000b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4000d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4000f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:401e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401e1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401e3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401e5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401e78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401e96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401eb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401ed2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:401ef0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:403c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403c1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403c3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403c5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403c78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403c96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403cb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403cd2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:403cf0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:405a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405a1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405a3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405a5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405a78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405a96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405ab4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405ad2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:405af0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:407800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40781e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40783c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40785a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:407878;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:407896;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4078b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4078d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4078f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:409600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40961e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40963c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40965a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:409678;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:409696;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4096b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4096d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:4096f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:40b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b41e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b43c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b45a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b478;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b496;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b4b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b4d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40b4f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:40d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d21e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d23c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d25a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d278;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d296;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d2b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d2d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40d2f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:40f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:40f0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:800000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:800078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:800096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8000b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8000d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8000f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:801e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801e1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801e3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801e5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801e78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801e96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801eb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801ed2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:801ef0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:803c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803c1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803c3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803c5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803c78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803c96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803cb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803cd2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:803cf0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:805a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805a1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805a3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805a5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805a78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805a96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805ab4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805ad2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:805af0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:807800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80781e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80783c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80785a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:807878;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:807896;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8078b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8078d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8078f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:809600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80961e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80963c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80965a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:809678;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:809696;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8096b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8096d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:8096f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:80b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b41e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b43c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b45a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b478;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b496;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b4b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b4d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80b4f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:80d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d21e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d23c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d25a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d278;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d296;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d2b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d2d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80d2f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:80f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:80f0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table><table width=23% border=1 cellspacing=0 cellpadding=0 align=left><tr>
+<td><span style='background-color:c00000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0001e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0003c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0005a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c00078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c00096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c000b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c000d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c000f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c01e00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01e1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01e3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01e5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01e78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01e96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01eb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01ed2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c01ef0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c03c00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03c1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03c3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03c5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03c78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03c96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03cb4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03cd2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c03cf0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c05a00;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05a1e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05a3c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05a5a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05a78;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05a96;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05ab4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05ad2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c05af0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c07800;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0781e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0783c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0785a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c07878;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c07896;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c078b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c078d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c078f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c09600;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0961e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0963c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0965a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c09678;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c09696;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c096b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c096d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c096f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c0b400;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b41e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b43c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b45a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b478;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b496;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b4b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b4d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0b4f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c0d200;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d21e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d23c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d25a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d278;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d296;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d2b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d2d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0d2f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr><tr>
+<td><span style='background-color:c0f000;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f01e;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f03c;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f05a;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f078;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f096;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f0b4;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f0d2;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+<td><span style='background-color:c0f0f0;width=100%' onmouseover='mos(this)' onclick='BG(this)'></span></td>
+
+</tr>
+</table>
+
+</table>
+
+
+
+<br>
+
