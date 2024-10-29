@@ -1,0 +1,8 @@
+FORMULAS PARA EL TURTLE GRAPHICS
+
+:
+F->+F+F+F-F-F-F
+
+ANGLE: 60
+
+----------

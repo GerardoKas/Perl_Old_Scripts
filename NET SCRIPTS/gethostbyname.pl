@@ -1,0 +1,1 @@
+print gethostbyname("google.com");

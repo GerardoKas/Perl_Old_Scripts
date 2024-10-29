@@ -1,0 +1,2 @@
+Aplican el efecto a una sola imagen pero crean una animacion
+se guarda en c:\temp

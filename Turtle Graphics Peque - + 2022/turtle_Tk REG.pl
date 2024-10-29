@@ -10,6 +10,7 @@ $mw->geometry('+0+0');
 $mw->OnDestroy(\&closin);
 $centros="200,200";
 $tamano="400,400";
+$doframes = 0;
 my $ccc=$mw->Canvas()->pack;
 $ccc->configure(-width=>'800',-height=>'400');
 $bal=$mw->Balloon();
@@ -82,7 +83,7 @@ $pen="black";
 if($doframes){$ima->Set(delay=>30);$ext="gif"}else{$ext="png"}
 print "\nSAVING...\n";
 $dest="turtle_N.$ext";
-$ima->Quantize(colors=>4);
+$ima->Quantize(colors=>16);
 $ima->Write($dest);
 system "start $dest";
 }
@@ -104,16 +105,17 @@ $cop=$res;
 $num=$cop=~s/F/F/g;
 $status="\n$num Lineas\n";
 
-dibuja($res,$doim);
-}
+dibuja($res,$doim); 
+} 
 ##############################
 ################################################################################
 sub dibuja{
 my $r=shift;
 my $hacerimagen=shift;
+$rule=~s/\s$//m;
 $text="$rule\nITER: $iter\nANGLE: $angle\nLEN: $len";
 print "$text\n";
-##########################
+                              ##########################
 my($ox,$oy,$dx,$dy,$aang);
 $ox=$ex;
 $oy=$ey;
@@ -124,12 +126,12 @@ my $frame=0;
 $pa=0;
 if($hacerimagen){
    print "anotando\n";
-$ima->[0]->Annotate(pen=>'red',font=>'@c:/windows/fonts/arial.ttf', text=>"$text",pointsize=>6,gravity=>'NorthWest');
+$ima->[0]->Annotate(pen=>'red',font=>'@c:/windows/fonts/arial.ttf', text=>"$text",pointsize=>8,gravity=>'NorthWest');
 }
 for(@rr){
    if($_ eq "F"){
       $num--;
-      if($num % 100 == 0){print "Quedan $num Lineas\n";}
+      if($num % 500 == 0){print "Quedan $num Lineas\n";}
       $dx=$ox;$dy=$oy;
       $dx+=$len;
       ($dx,$dy)=rota($len,0,$aang);
